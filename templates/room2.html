@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<head>
+   <title>ANS Office Automation</title>
+
+    <style>
+     body
+         {
+         background-image:url({{url_for('static', filename ='room1.jpeg') }})
+          }
+
+     </style>
+
+</head>
+
+<body>
+   <h1>ANS Office Automation</h1>
+   {% for n in room2 %}
+   <h2>{{ room2[n].name }}
+   {% if room2[n].state == true %}
+     <!-- is currently <strong>off</strong></h2> -->
+      <a href="/{{n}}/off"></div></div>
+      <img src="static/off.png">
+   {% else %}
+    <!-- is currently <strong>on</strong></h2> -->
+      <a href="/{{n}}/on"></div></div>
+      <img src="static/on.png">
+
+   {% endif %}
+   {% endfor %}
+</body>
+</html>
+
